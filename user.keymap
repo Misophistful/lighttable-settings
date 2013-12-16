@@ -1,0 +1,36 @@
+;; User keymap
+;; -----------------------------
+;; Keymaps are stored as a set of diffs that are merged together together
+;; to create the final set of keys. You can modify these diffs to either add
+;; or subtract bindings.
+;;
+;; Like behaviors, keys are bound by tag. When objects with those tags are active
+;; the key bindings are live. Keys can be bound to any number of Light Table commands,
+;; allowing you the flexibility to execute multiple operations together. To see a list
+;; of all the commands you can execute, start typing a word related to the thing you
+;; want to do in between the square brackets (e.g. type "editor").
+
+{:+ {:app {"pmeta-shift-w" [:workspace.show]
+           "pmeta-shift-c" [:toggle-console]
+           "pmeta-shift-n" [:new-file
+                            :set-syntax]
+
+           "pmeta-]" [:window.zoom-in]
+           "pmeta-[" [:window.zoom-out]
+           "pmeta-0" [:window.zoom-reset]}
+
+     :editor {"pmeta-;" [:toggle-comment-selection]
+              "pmeta-d" [:editor.doc.toggle]
+              "pmeta-l" [:editor.select-line]
+              "pmeta-shift-l" [:goto-line]
+
+              "pmeta-shift-backspace" [:clear-inline-results]
+
+              "ctrl-d" [:paredit.select.parent]
+              "ctrl-h" [:paredit.grow.left]
+              "ctrl-t" [:paredit.shrink.left]
+              "ctrl-n" [:paredit.shrink.right]
+              "ctrl-s" [:paredit.grow.right]
+
+              "ctrl-w" [:editor.watch.watch-selection]
+              "ctrl-shift-w" [:editor.watch.unwatch]}}}
