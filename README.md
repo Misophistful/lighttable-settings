@@ -1,4 +1,4 @@
 lighttable-settings
 ===================
 
-My user.keymap and user.behaviors files
+My user.behaviors and user.keymap files.
