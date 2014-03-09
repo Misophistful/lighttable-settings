@@ -15,22 +15,30 @@
            "pmeta-shift-n" [:new-file
                             :set-syntax]
 
-           "pmeta-]" [:window.zoom-in]
-           "pmeta-[" [:window.zoom-out]
-           "pmeta-0" [:window.zoom-reset]}
+           "pmeta-=" [:window.zoom-in]
+           "pmeta--" [:window.zoom-out]
+           "pmeta-0" [:window.zoom-reset]
+
+           "pmeta-shift-s" [:save-all]}
 
      :editor {"pmeta-;" [:toggle-comment-selection]
               "pmeta-d" [:editor.doc.toggle]
               "pmeta-l" [:editor.select-line]
               "pmeta-shift-l" [:goto-line]
 
+              "pmeta-shift-t" [:lt.plugins.lt-expectations/run-expectations-curr-file]
+
               "pmeta-shift-backspace" [:clear-inline-results]
 
-              "ctrl-d" [:paredit.select.parent]
+              "ctrl-d" [:editor.jump-to-definition-at-cursor]
+              "ctrl-w" [:paredit.select.parent]
+              "ctrl-u" [:paredit.unwrap.parent]
               "ctrl-h" [:paredit.grow.left]
               "ctrl-t" [:paredit.shrink.left]
               "ctrl-n" [:paredit.shrink.right]
               "ctrl-s" [:paredit.grow.right]
 
               "ctrl-w" [:editor.watch.watch-selection]
-              "ctrl-shift-w" [:editor.watch.unwatch]}}}
+              "ctrl-shift-w" [:editor.watch.unwatch]}}
+
+ :- {:editor {"pmeta-shift-s" [:save-as]}}}
