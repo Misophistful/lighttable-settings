@@ -18,7 +18,7 @@
      ;; The editor tag is applied to all editors
      :editor [:lt.objs.editor/no-wrap
               (:lt.objs.style/set-theme "borealis")
-              (:lt.objs.style/font-settings "Espresso Mono" "11" "1.1")]
+              (:lt.objs.style/font-settings "Espresso Mono" "11" "1.2")]
 
      ;; Here we can add behaviors to just clojure editors
      :editor.clojure [(:lt.objs.langs.clj/print-length 1000)
