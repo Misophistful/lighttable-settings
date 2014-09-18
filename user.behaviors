@@ -18,7 +18,7 @@
      ;; The editor tag is applied to all editors
      :editor [:lt.objs.editor/no-wrap
               (:lt.objs.style/set-theme "borealis")
-              (:lt.objs.style/font-settings "Espresso Mono" "11" "1.2")]
+              (:lt.objs.style/font-settings "Triplicate T4c" "11" "1.2")]
 
      ;; Here we can add behaviors to just clojure editors
      :editor.clojure [(:lt.objs.langs.clj/print-length 1000)
@@ -26,4 +26,5 @@
 
  ;; You can use the subtract key to remove behavior that may get added by
  ;; another diff
- :- {:editor.file-backed [:lt.objs.editor.file/last-char-newline]}}
+ :- {:app [:lt.objs.intro/show-intro]
+     :editor.file-backed [:lt.objs.editor.file/last-char-newline]}}
