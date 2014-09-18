@@ -10,35 +10,50 @@
 ;; of all the commands you can execute, start typing a word related to the thing you
 ;; want to do in between the square brackets (e.g. type "editor").
 
-{:+ {:app {"pmeta-shift-w" [:workspace.show]
-           "pmeta-shift-c" [:toggle-console]
-           "pmeta-shift-n" [:new-file
-                            :set-syntax]
+{:+ {:app {   "pmeta-shift-w"         [:workspace.show]
+              "pmeta-shift-c"         [:toggle-console]
+              "pmeta-shift-r"         [:clear-console]
+              "pmeta-shift-t"         [:show-connect]
+              "pmeta-shift-n"         [:new-file :set-syntax]
 
-           "pmeta-=" [:window.zoom-in]
-           "pmeta--" [:window.zoom-out]
-           "pmeta-0" [:window.zoom-reset]
+              "pmeta-="               [:window.zoom-in]
+              "pmeta--"               [:window.zoom-out]
+              "pmeta-0"               [:window.zoom-reset]
 
-           "pmeta-shift-s" [:save-all]}
+              "pmeta-shift-s"         [:save-all]}
 
-     :editor {"pmeta-;" [:toggle-comment-selection]
-              "pmeta-d" [:editor.doc.toggle]
-              "pmeta-l" [:editor.select-line]
-              "pmeta-shift-l" [:goto-line]
+     :editor {"pmeta-;"               [:toggle-comment-selection]
+              "pmeta-shift-d"         [:editor.doc.toggle]
+              "pmeta-l"               [:goto-line]
+              "pmeta-d"               [:editor.jump-to-definition-at-cursor]
 
-              "pmeta-shift-t" [:lt.plugins.lt-expectations/run-expectations-curr-file]
+              "pmeta-shift-e"         [:lt.plugins.lt-expectations/run-expectations-curr-file]
 
               "pmeta-shift-backspace" [:clear-inline-results]
 
-              "ctrl-d" [:editor.jump-to-definition-at-cursor]
-              "ctrl-w" [:paredit.select.parent]
-              "ctrl-u" [:paredit.unwrap.parent]
-              "ctrl-h" [:paredit.grow.left]
-              "ctrl-t" [:paredit.shrink.left]
-              "ctrl-n" [:paredit.shrink.right]
-              "ctrl-s" [:paredit.grow.right]
+              "alt-h"                 [:paredit.grow.left]
+              "alt-t"                 [:paredit.shrink.left]
+              "alt-n"                 [:paredit.shrink.right]
+              "alt-s"                 [:paredit.grow.right]
 
-              "ctrl-w" [:editor.watch.watch-selection]
-              "ctrl-shift-w" [:editor.watch.unwatch]}}
+              "shift-ctrl-space"      [:paredit.select.parent]
 
- :- {:editor {"pmeta-shift-s" [:save-as]}}}
+              "ctrl-w"                [:editor.watch.watch-selection]
+              "alt-w"                 [:rolex.watch.values-over-time]
+              "ctrl-shift-w"          [:editor.watch.unwatch]
+
+              "ctrl-shift-up"         [:editor.sublime.selectLinesUpward]
+              "ctrl-shift-down"       [:editor.sublime.selectLinesDownward]
+              "ctrl-b"                [:editor.sublime.goToBracket]
+              "ctrl-shift-b"          [:editor.sublime.selectBetweenBrackets]
+              "ctrl-n"                [:editor.sublime.selectNextOccurrence]
+              "ctrl-pmeta-up"         [:editor.sublime.swapLineUp]
+              "ctrl-pmeta-down"       [:editor.sublime.swapLineDown]
+              "shift-pmeta-l"         [:editor.sublime.splitSelectionByLine]
+              "pmeta-j"               [:editor.sublime.joinLines]
+              "shift-pmeta-d"         [:editor.sublime.duplicateLine]
+
+              "alt-pmeta-up"          [:lt.plugins.lt-scrubber/increment-value]
+              "alt-pmeta-down"        [:lt.plugins.lt-scrubber/decrement-value]}}
+
+ :- {:editor {"pmeta-shift-s"         [:save-as]}}}
