@@ -2,6 +2,7 @@
  [:app :lt.objs.sidebar.workspace/workspace.open-on-start]
  [:app :lt.objs.console/set-console-limit 1000]
  [:app :-lt.objs.intro/show-intro]
+ [:app :lt.objs.settings/pair-keymap-diffs]
 
  [:editor :lt.objs.editor/no-wrap]
  [:editor :lt.objs.style/set-theme "borealis"]
