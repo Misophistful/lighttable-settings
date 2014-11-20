@@ -1,59 +1,37 @@
-;; User keymap
-;; -----------------------------
-;; Keymaps are stored as a set of diffs that are merged together together
-;; to create the final set of keys. You can modify these diffs to either add
-;; or subtract bindings.
-;;
-;; Like behaviors, keys are bound by tag. When objects with those tags are active
-;; the key bindings are live. Keys can be bound to any number of Light Table commands,
-;; allowing you the flexibility to execute multiple operations together. To see a list
-;; of all the commands you can execute, start typing a word related to the thing you
-;; want to do in between the square brackets (e.g. type "editor").
+[[:app "pmeta-shift-c" :toggle-console]
+ [:app "pmeta-=" :window.zoom-in]
+ [:app "pmeta-shift-n" :new-file :set-syntax]
+ [:app "pmeta-shift-r" :clear-console]
+ [:app "pmeta-shift-s" :save-all]
+ [:app "pmeta-shift-t" :show-connect]
+ [:app "pmeta-shift-w" :workspace.show]
+ [:app "pmeta--" :window.zoom-out]
+ [:app "pmeta-0" :window.zoom-reset]
 
-{:+ {:app {   "pmeta-shift-w"         [:workspace.show]
-              "pmeta-shift-c"         [:toggle-console]
-              "pmeta-shift-r"         [:clear-console]
-              "pmeta-shift-t"         [:show-connect]
-              "pmeta-shift-n"         [:new-file :set-syntax]
-
-              "pmeta-="               [:window.zoom-in]
-              "pmeta--"               [:window.zoom-out]
-              "pmeta-0"               [:window.zoom-reset]
-
-              "pmeta-shift-s"         [:save-all]}
-
-     :editor {"pmeta-;"               [:toggle-comment-selection]
-              "pmeta-shift-d"         [:editor.doc.toggle]
-              "pmeta-l"               [:goto-line]
-              "pmeta-d"               [:editor.jump-to-definition-at-cursor]
-
-              "pmeta-shift-e"         [:lt.plugins.lt-expectations/run-expectations-curr-file]
-
-              "pmeta-shift-backspace" [:clear-inline-results]
-
-              "alt-h"                 [:paredit.grow.left]
-              "alt-t"                 [:paredit.shrink.left]
-              "alt-n"                 [:paredit.shrink.right]
-              "alt-s"                 [:paredit.grow.right]
-
-              "shift-ctrl-space"      [:paredit.select.parent]
-
-              "ctrl-w"                [:editor.watch.watch-selection]
-              "alt-w"                 [:rolex.watch.values-over-time]
-              "ctrl-shift-w"          [:editor.watch.unwatch]
-
-              "ctrl-shift-up"         [:editor.sublime.selectLinesUpward]
-              "ctrl-shift-down"       [:editor.sublime.selectLinesDownward]
-              "ctrl-b"                [:editor.sublime.goToBracket]
-              "ctrl-shift-b"          [:editor.sublime.selectBetweenBrackets]
-              "ctrl-n"                [:editor.sublime.selectNextOccurrence]
-              "ctrl-pmeta-up"         [:editor.sublime.swapLineUp]
-              "ctrl-pmeta-down"       [:editor.sublime.swapLineDown]
-              "shift-pmeta-l"         [:editor.sublime.splitSelectionByLine]
-              "pmeta-j"               [:editor.sublime.joinLines]
-              "shift-pmeta-d"         [:editor.sublime.duplicateLine]
-
-              "alt-pmeta-up"          [:lt.plugins.lt-scrubber/increment-value]
-              "alt-pmeta-down"        [:lt.plugins.lt-scrubber/decrement-value]}}
-
- :- {:editor {"pmeta-shift-s"         [:save-as]}}}
+ [:editor "ctrl-b" :editor.sublime.goToBracket]
+ [:editor "shift-pmeta-d" :editor.sublime.duplicateLine]
+ [:editor "pmeta-shift-d" :editor.doc.toggle]
+ [:editor "pmeta-shift-e" :lt.plugins.lt-expectations/run-expectations-curr-file]
+ [:editor "pmeta-;" :toggle-comment-selection]
+ [:editor "alt-h" :paredit.grow.left]
+ [:editor "ctrl-shift-up" :editor.sublime.selectLinesUpward]
+ [:editor "shift-pmeta-l" :editor.sublime.splitSelectionByLine]
+ [:editor "ctrl-shift-w" :editor.watch.unwatch]
+ [:editor "alt-n" :paredit.shrink.right]
+ [:editor "ctrl-n" :editor.sublime.selectNextOccurrence]
+ [:editor "pmeta-d" :editor.jump-to-definition-at-cursor]
+ [:editor "shift-ctrl-space" :paredit.select.parent]
+ [:editor "alt-s" :paredit.grow.right]
+ [:editor "ctrl-shift-down" :editor.sublime.selectLinesDownward]
+ [:editor "alt-t" :paredit.shrink.left]
+ [:editor "pmeta-j" :editor.sublime.joinLines]
+ [:editor "alt-w" :rolex.watch.values-over-time]
+ [:editor "pmeta-l" :goto-line]
+ [:editor "ctrl-shift-b" :editor.sublime.selectBetweenBrackets]
+ [:editor "ctrl-w" :editor.watch.watch-selection]
+ [:editor "ctrl-pmeta-up" :editor.sublime.swapLineUp]
+ [:editor "alt-pmeta-up" :lt.plugins.lt-scrubber/increment-value]
+ [:editor "ctrl-pmeta-down" :editor.sublime.swapLineDown]
+ [:editor "pmeta-shift-backspace" :clear-inline-results]
+ [:editor "alt-pmeta-down" :lt.plugins.lt-scrubber/decrement-value]
+ [:editor "-pmeta-shift-s" :save-as]]
